@@ -35,11 +35,6 @@
             this.saveConfigBtn = new System.Windows.Forms.Button();
             this.OpenConfigFileBtn = new System.Windows.Forms.Button();
             this.ConfigFilePath = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.saveFilePath = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.saveDataToFile = new System.Windows.Forms.Button();
-            this.saveToFileCheck = new System.Windows.Forms.CheckBox();
             this.gruopBox2 = new System.Windows.Forms.GroupBox();
             this.stopBtn = new System.Windows.Forms.Button();
             this.startBtn = new System.Windows.Forms.Button();
@@ -48,14 +43,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.databitsCB = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.checkbitsCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buadRateCB = new System.Windows.Forms.ComboBox();
             this.portsListLabel = new System.Windows.Forms.Label();
             this.portsListCB = new System.Windows.Forms.ComboBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataRTB = new System.Windows.Forms.RichTextBox();
-            this.openConfigFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.saveDBConfigBtn = new System.Windows.Forms.Button();
             this.TestConnBtn = new System.Windows.Forms.Button();
@@ -69,6 +61,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dbServerAddressTB = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.saveFilePath = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.saveDataToFile = new System.Windows.Forms.Button();
+            this.saveToFileCheck = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataRTB = new System.Windows.Forms.RichTextBox();
+            this.openConfigFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -78,10 +78,10 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.gruopBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTitle
@@ -176,58 +176,6 @@
             this.ConfigFilePath.TabIndex = 0;
             this.ConfigFilePath.Text = "*FilePath*";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.saveFilePath);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.saveDataToFile);
-            this.groupBox2.Controls.Add(this.saveToFileCheck);
-            this.groupBox2.Location = new System.Drawing.Point(6, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(227, 89);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Data Saving";
-            // 
-            // saveFilePath
-            // 
-            this.saveFilePath.AutoSize = true;
-            this.saveFilePath.Location = new System.Drawing.Point(25, 42);
-            this.saveFilePath.Name = "saveFilePath";
-            this.saveFilePath.Size = new System.Drawing.Size(65, 12);
-            this.saveFilePath.TabIndex = 3;
-            this.saveFilePath.Text = "*FilePath*";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 64);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(132, 16);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Upload to Database";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // saveDataToFile
-            // 
-            this.saveDataToFile.Location = new System.Drawing.Point(132, 17);
-            this.saveDataToFile.Name = "saveDataToFile";
-            this.saveDataToFile.Size = new System.Drawing.Size(75, 23);
-            this.saveDataToFile.TabIndex = 1;
-            this.saveDataToFile.Text = "Browse";
-            this.saveDataToFile.UseVisualStyleBackColor = true;
-            this.saveDataToFile.Click += new System.EventHandler(this.saveDataToFile_Click);
-            // 
-            // saveToFileCheck
-            // 
-            this.saveToFileCheck.AutoSize = true;
-            this.saveToFileCheck.Location = new System.Drawing.Point(7, 21);
-            this.saveToFileCheck.Name = "saveToFileCheck";
-            this.saveToFileCheck.Size = new System.Drawing.Size(96, 16);
-            this.saveToFileCheck.TabIndex = 0;
-            this.saveToFileCheck.Text = "Save to File";
-            this.saveToFileCheck.UseVisualStyleBackColor = true;
-            // 
             // gruopBox2
             // 
             this.gruopBox2.Controls.Add(this.stopBtn);
@@ -237,7 +185,7 @@
             this.gruopBox2.Controls.Add(this.label3);
             this.gruopBox2.Controls.Add(this.databitsCB);
             this.gruopBox2.Controls.Add(this.label2);
-            this.gruopBox2.Controls.Add(this.comboBox2);
+            this.gruopBox2.Controls.Add(this.checkbitsCB);
             this.gruopBox2.Controls.Add(this.label1);
             this.gruopBox2.Controls.Add(this.buadRateCB);
             this.gruopBox2.Controls.Add(this.portsListLabel);
@@ -257,6 +205,7 @@
             this.stopBtn.TabIndex = 11;
             this.stopBtn.Text = "Close Port";
             this.stopBtn.UseVisualStyleBackColor = true;
+            this.stopBtn.Click += new System.EventHandler(this.stopBtn_Click);
             // 
             // startBtn
             // 
@@ -266,6 +215,7 @@
             this.startBtn.TabIndex = 10;
             this.startBtn.Text = "Open Port";
             this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // label4
             // 
@@ -281,9 +231,9 @@
             // 
             this.stopbitsCB.FormattingEnabled = true;
             this.stopbitsCB.Items.AddRange(new object[] {
-            "1 bit",
-            "1.5 bits",
-            "2 bits"});
+            "1",
+            "1.5",
+            "2"});
             this.stopbitsCB.Location = new System.Drawing.Point(81, 145);
             this.stopbitsCB.Name = "stopbitsCB";
             this.stopbitsCB.Size = new System.Drawing.Size(121, 20);
@@ -302,11 +252,9 @@
             // 
             this.databitsCB.FormattingEnabled = true;
             this.databitsCB.Items.AddRange(new object[] {
-            "4 bits",
-            "5 bits",
-            "6 bits",
-            "7 bits",
-            "8 bits"});
+            "8",
+            "7",
+            "6"});
             this.databitsCB.Location = new System.Drawing.Point(81, 115);
             this.databitsCB.Name = "databitsCB";
             this.databitsCB.Size = new System.Drawing.Size(121, 20);
@@ -322,19 +270,17 @@
             this.label2.Text = "Checkbits";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // comboBox2
+            // checkbitsCB
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.checkbitsCB.FormattingEnabled = true;
+            this.checkbitsCB.Items.AddRange(new object[] {
             "None",
-            "Odd Check",
-            "Even Check",
-            "Check by 1",
-            "Check by 0"});
-            this.comboBox2.Location = new System.Drawing.Point(81, 85);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
-            this.comboBox2.TabIndex = 4;
+            "Odd",
+            "Even"});
+            this.checkbitsCB.Location = new System.Drawing.Point(81, 85);
+            this.checkbitsCB.Name = "checkbitsCB";
+            this.checkbitsCB.Size = new System.Drawing.Size(121, 20);
+            this.checkbitsCB.TabIndex = 4;
             // 
             // label1
             // 
@@ -387,30 +333,7 @@
             this.portsListCB.Name = "portsListCB";
             this.portsListCB.Size = new System.Drawing.Size(121, 20);
             this.portsListCB.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dataRTB);
-            this.groupBox3.Location = new System.Drawing.Point(12, 345);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(460, 254);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Data from Port";
-            // 
-            // dataRTB
-            // 
-            this.dataRTB.Location = new System.Drawing.Point(6, 20);
-            this.dataRTB.Name = "dataRTB";
-            this.dataRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.dataRTB.Size = new System.Drawing.Size(448, 224);
-            this.dataRTB.TabIndex = 0;
-            this.dataRTB.Text = "";
-            // 
-            // openConfigFileDialog
-            // 
-            this.openConfigFileDialog.FileName = "config.xml";
-            this.openConfigFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            this.portsListCB.SelectedIndexChanged += new System.EventHandler(this.portsListCB_SelectedIndexChanged);
             // 
             // groupBox4
             // 
@@ -533,6 +456,82 @@
             this.dbServerAddressTB.Size = new System.Drawing.Size(121, 21);
             this.dbServerAddressTB.TabIndex = 2;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.saveFilePath);
+            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.saveDataToFile);
+            this.groupBox2.Controls.Add(this.saveToFileCheck);
+            this.groupBox2.Location = new System.Drawing.Point(6, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(227, 89);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Data Saving";
+            // 
+            // saveFilePath
+            // 
+            this.saveFilePath.AutoSize = true;
+            this.saveFilePath.Location = new System.Drawing.Point(25, 42);
+            this.saveFilePath.Name = "saveFilePath";
+            this.saveFilePath.Size = new System.Drawing.Size(65, 12);
+            this.saveFilePath.TabIndex = 3;
+            this.saveFilePath.Text = "*FilePath*";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 64);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(132, 16);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "Upload to Database";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // saveDataToFile
+            // 
+            this.saveDataToFile.Location = new System.Drawing.Point(132, 17);
+            this.saveDataToFile.Name = "saveDataToFile";
+            this.saveDataToFile.Size = new System.Drawing.Size(75, 23);
+            this.saveDataToFile.TabIndex = 1;
+            this.saveDataToFile.Text = "Browse";
+            this.saveDataToFile.UseVisualStyleBackColor = true;
+            this.saveDataToFile.Click += new System.EventHandler(this.saveDataToFile_Click);
+            // 
+            // saveToFileCheck
+            // 
+            this.saveToFileCheck.AutoSize = true;
+            this.saveToFileCheck.Location = new System.Drawing.Point(7, 21);
+            this.saveToFileCheck.Name = "saveToFileCheck";
+            this.saveToFileCheck.Size = new System.Drawing.Size(96, 16);
+            this.saveToFileCheck.TabIndex = 0;
+            this.saveToFileCheck.Text = "Save to File";
+            this.saveToFileCheck.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dataRTB);
+            this.groupBox3.Location = new System.Drawing.Point(12, 345);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(460, 254);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Data from Port";
+            // 
+            // dataRTB
+            // 
+            this.dataRTB.Location = new System.Drawing.Point(6, 20);
+            this.dataRTB.Name = "dataRTB";
+            this.dataRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.dataRTB.Size = new System.Drawing.Size(448, 224);
+            this.dataRTB.TabIndex = 0;
+            this.dataRTB.Text = "";
+            // 
+            // openConfigFileDialog
+            // 
+            this.openConfigFileDialog.FileName = "config.xml";
+            this.openConfigFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // MainWindo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -554,13 +553,13 @@
             this.splitContainer2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.gruopBox2.ResumeLayout(false);
             this.gruopBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -579,7 +578,7 @@
         private System.Windows.Forms.Label portsListLabel;
         private System.Windows.Forms.ComboBox portsListCB;
         private System.Windows.Forms.ComboBox buadRateCB;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox checkbitsCB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
