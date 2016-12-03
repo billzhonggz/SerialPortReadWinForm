@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.MainTitle = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.saveConfigBtn = new System.Windows.Forms.Button();
             this.OpenConfigFileBtn = new System.Windows.Forms.Button();
             this.ConfigFilePath = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -58,8 +58,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataRTB = new System.Windows.Forms.RichTextBox();
             this.openConfigFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.saveConfigBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -136,6 +134,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Config File";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
+            // 
+            // saveConfigBtn
+            // 
+            this.saveConfigBtn.Location = new System.Drawing.Point(107, 36);
+            this.saveConfigBtn.Name = "saveConfigBtn";
+            this.saveConfigBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveConfigBtn.TabIndex = 2;
+            this.saveConfigBtn.Text = "Save";
+            this.saveConfigBtn.UseVisualStyleBackColor = true;
             // 
             // OpenConfigFileBtn
             // 
@@ -412,15 +419,6 @@
             this.openConfigFileDialog.FileName = "config.xml";
             this.openConfigFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // saveConfigBtn
-            // 
-            this.saveConfigBtn.Location = new System.Drawing.Point(107, 36);
-            this.saveConfigBtn.Name = "saveConfigBtn";
-            this.saveConfigBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveConfigBtn.TabIndex = 2;
-            this.saveConfigBtn.Text = "Save";
-            this.saveConfigBtn.UseVisualStyleBackColor = true;
-            // 
             // MainWindo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -461,7 +459,6 @@
         private System.Windows.Forms.Label ConfigFilePath;
         private System.Windows.Forms.OpenFileDialog openConfigFileDialog;
         private System.Windows.Forms.GroupBox gruopBox2;
-        private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Label portsListLabel;
         private System.Windows.Forms.ComboBox portsListCB;
         private System.Windows.Forms.ComboBox buadRateCB;
