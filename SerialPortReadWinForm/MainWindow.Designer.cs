@@ -577,7 +577,7 @@
         private System.Windows.Forms.OpenFileDialog openConfigFileDialog;
         private System.Windows.Forms.GroupBox gruopBox2;
         private System.Windows.Forms.Label portsListLabel;
-        private System.Windows.Forms.ComboBox portsListCB;
+        public System.Windows.Forms.ComboBox portsListCB;
         private System.Windows.Forms.ComboBox buadRateCB;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
