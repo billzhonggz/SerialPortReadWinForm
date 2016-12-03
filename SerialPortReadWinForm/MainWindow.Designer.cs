@@ -49,7 +49,7 @@
             this.portsListLabel = new System.Windows.Forms.Label();
             this.portsListCB = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.saveDBConfigBtn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.TestConnBtn = new System.Windows.Forms.Button();
             this.dbNameTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,9 +62,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dbServerAddressTB = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.saveFilePath = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.saveDataToFile = new System.Windows.Forms.Button();
             this.saveToFileCheck = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataRTB = new System.Windows.Forms.RichTextBox();
@@ -156,6 +154,7 @@
             this.saveConfigBtn.TabIndex = 2;
             this.saveConfigBtn.Text = "Save";
             this.saveConfigBtn.UseVisualStyleBackColor = true;
+            this.saveConfigBtn.Click += new System.EventHandler(this.saveConfigBtn_Click);
             // 
             // OpenConfigFileBtn
             // 
@@ -337,7 +336,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.saveDBConfigBtn);
+            this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.TestConnBtn);
             this.groupBox4.Controls.Add(this.dbNameTB);
             this.groupBox4.Controls.Add(this.label6);
@@ -356,14 +355,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Database Configuration";
             // 
-            // saveDBConfigBtn
+            // label10
             // 
-            this.saveDBConfigBtn.Location = new System.Drawing.Point(136, 172);
-            this.saveDBConfigBtn.Name = "saveDBConfigBtn";
-            this.saveDBConfigBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveDBConfigBtn.TabIndex = 13;
-            this.saveDBConfigBtn.Text = "Save";
-            this.saveDBConfigBtn.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(120, 177);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 12);
+            this.label10.TabIndex = 13;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // TestConnBtn
             // 
@@ -458,50 +457,29 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.saveFilePath);
             this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.saveDataToFile);
             this.groupBox2.Controls.Add(this.saveToFileCheck);
             this.groupBox2.Location = new System.Drawing.Point(6, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(227, 89);
+            this.groupBox2.Size = new System.Drawing.Size(227, 79);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Saving";
             // 
-            // saveFilePath
-            // 
-            this.saveFilePath.AutoSize = true;
-            this.saveFilePath.Location = new System.Drawing.Point(25, 42);
-            this.saveFilePath.Name = "saveFilePath";
-            this.saveFilePath.Size = new System.Drawing.Size(65, 12);
-            this.saveFilePath.TabIndex = 3;
-            this.saveFilePath.Text = "*FilePath*";
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 64);
+            this.checkBox1.Location = new System.Drawing.Point(20, 50);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(132, 16);
             this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "Upload to Database";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // saveDataToFile
-            // 
-            this.saveDataToFile.Location = new System.Drawing.Point(132, 17);
-            this.saveDataToFile.Name = "saveDataToFile";
-            this.saveDataToFile.Size = new System.Drawing.Size(75, 23);
-            this.saveDataToFile.TabIndex = 1;
-            this.saveDataToFile.Text = "Browse";
-            this.saveDataToFile.UseVisualStyleBackColor = true;
-            this.saveDataToFile.Click += new System.EventHandler(this.saveDataToFile_Click);
-            // 
             // saveToFileCheck
             // 
             this.saveToFileCheck.AutoSize = true;
-            this.saveToFileCheck.Location = new System.Drawing.Point(7, 21);
+            this.saveToFileCheck.Location = new System.Drawing.Point(20, 20);
             this.saveToFileCheck.Name = "saveToFileCheck";
             this.saveToFileCheck.Size = new System.Drawing.Size(96, 16);
             this.saveToFileCheck.TabIndex = 0;
@@ -526,10 +504,11 @@
             this.dataRTB.Size = new System.Drawing.Size(448, 224);
             this.dataRTB.TabIndex = 0;
             this.dataRTB.Text = "";
+            this.dataRTB.TextChanged += new System.EventHandler(this.dataRTB_TextChanged);
             // 
             // openConfigFileDialog
             // 
-            this.openConfigFileDialog.FileName = "config.xml";
+            this.openConfigFileDialog.FileName = "config.ini";
             this.openConfigFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // MainWindo
@@ -588,15 +567,12 @@
         private System.Windows.Forms.Button stopBtn;
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button saveDataToFile;
         private System.Windows.Forms.CheckBox saveToFileCheck;
-        private System.Windows.Forms.Label saveFilePath;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RichTextBox dataRTB;
         private System.Windows.Forms.Button saveConfigBtn;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button saveDBConfigBtn;
         private System.Windows.Forms.Button TestConnBtn;
         private System.Windows.Forms.TextBox dbNameTB;
         private System.Windows.Forms.Label label6;
@@ -608,6 +584,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox dbServerAddressTB;
+        private System.Windows.Forms.Label label10;
     }
 }
 
