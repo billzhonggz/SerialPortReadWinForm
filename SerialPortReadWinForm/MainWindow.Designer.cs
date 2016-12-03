@@ -36,8 +36,6 @@
             this.OpenConfigFileBtn = new System.Windows.Forms.Button();
             this.ConfigFilePath = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dbConfigLabel = new System.Windows.Forms.Label();
-            this.DBConfigBtn = new System.Windows.Forms.Button();
             this.saveFilePath = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.saveDataToFile = new System.Windows.Forms.Button();
@@ -58,6 +56,19 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataRTB = new System.Windows.Forms.RichTextBox();
             this.openConfigFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.saveDBConfigBtn = new System.Windows.Forms.Button();
+            this.TestConnBtn = new System.Windows.Forms.Button();
+            this.dbNameTB = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dbPwdTB = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dbUsrNameTB = new System.Windows.Forms.TextBox();
+            this.dbPortDB = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dbServerAddressTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,6 +81,7 @@
             this.groupBox2.SuspendLayout();
             this.gruopBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTitle
@@ -97,8 +109,9 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
-            this.splitContainer1.Size = new System.Drawing.Size(460, 418);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox4);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer1.Size = new System.Drawing.Size(460, 308);
             this.splitContainer1.SplitterDistance = 220;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -115,10 +128,10 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer2.Panel2.Controls.Add(this.gruopBox2);
-            this.splitContainer2.Size = new System.Drawing.Size(220, 418);
-            this.splitContainer2.SplitterDistance = 71;
+            this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
+            this.splitContainer2.Size = new System.Drawing.Size(220, 308);
+            this.splitContainer2.SplitterDistance = 85;
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
             // 
@@ -129,7 +142,7 @@
             this.groupBox1.Controls.Add(this.ConfigFilePath);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(214, 66);
+            this.groupBox1.Size = new System.Drawing.Size(214, 79);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Config File";
@@ -137,7 +150,7 @@
             // 
             // saveConfigBtn
             // 
-            this.saveConfigBtn.Location = new System.Drawing.Point(107, 36);
+            this.saveConfigBtn.Location = new System.Drawing.Point(107, 46);
             this.saveConfigBtn.Name = "saveConfigBtn";
             this.saveConfigBtn.Size = new System.Drawing.Size(75, 23);
             this.saveConfigBtn.TabIndex = 2;
@@ -146,7 +159,7 @@
             // 
             // OpenConfigFileBtn
             // 
-            this.OpenConfigFileBtn.Location = new System.Drawing.Point(26, 36);
+            this.OpenConfigFileBtn.Location = new System.Drawing.Point(26, 46);
             this.OpenConfigFileBtn.Name = "OpenConfigFileBtn";
             this.OpenConfigFileBtn.Size = new System.Drawing.Size(75, 23);
             this.OpenConfigFileBtn.TabIndex = 1;
@@ -165,36 +178,16 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dbConfigLabel);
-            this.groupBox2.Controls.Add(this.DBConfigBtn);
             this.groupBox2.Controls.Add(this.saveFilePath);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.saveDataToFile);
             this.groupBox2.Controls.Add(this.saveToFileCheck);
-            this.groupBox2.Location = new System.Drawing.Point(3, 201);
+            this.groupBox2.Location = new System.Drawing.Point(6, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(214, 139);
+            this.groupBox2.Size = new System.Drawing.Size(227, 89);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Saving";
-            // 
-            // dbConfigLabel
-            // 
-            this.dbConfigLabel.AutoSize = true;
-            this.dbConfigLabel.Location = new System.Drawing.Point(25, 115);
-            this.dbConfigLabel.Name = "dbConfigLabel";
-            this.dbConfigLabel.Size = new System.Drawing.Size(65, 12);
-            this.dbConfigLabel.TabIndex = 5;
-            this.dbConfigLabel.Text = "*DBConfig*";
-            // 
-            // DBConfigBtn
-            // 
-            this.DBConfigBtn.Location = new System.Drawing.Point(49, 86);
-            this.DBConfigBtn.Name = "DBConfigBtn";
-            this.DBConfigBtn.Size = new System.Drawing.Size(159, 23);
-            this.DBConfigBtn.TabIndex = 4;
-            this.DBConfigBtn.Text = "Database Configuration";
-            this.DBConfigBtn.UseVisualStyleBackColor = true;
             // 
             // saveFilePath
             // 
@@ -249,16 +242,16 @@
             this.gruopBox2.Controls.Add(this.buadRateCB);
             this.gruopBox2.Controls.Add(this.portsListLabel);
             this.gruopBox2.Controls.Add(this.portsListCB);
-            this.gruopBox2.Location = new System.Drawing.Point(3, 3);
+            this.gruopBox2.Location = new System.Drawing.Point(6, 9);
             this.gruopBox2.Name = "gruopBox2";
-            this.gruopBox2.Size = new System.Drawing.Size(214, 192);
+            this.gruopBox2.Size = new System.Drawing.Size(211, 204);
             this.gruopBox2.TabIndex = 0;
             this.gruopBox2.TabStop = false;
             this.gruopBox2.Text = "Serial Port";
             // 
             // stopBtn
             // 
-            this.stopBtn.Location = new System.Drawing.Point(118, 157);
+            this.stopBtn.Location = new System.Drawing.Point(113, 172);
             this.stopBtn.Name = "stopBtn";
             this.stopBtn.Size = new System.Drawing.Size(90, 23);
             this.stopBtn.TabIndex = 11;
@@ -267,7 +260,7 @@
             // 
             // startBtn
             // 
-            this.startBtn.Location = new System.Drawing.Point(11, 157);
+            this.startBtn.Location = new System.Drawing.Point(6, 172);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(90, 23);
             this.startBtn.TabIndex = 10;
@@ -277,7 +270,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 132);
+            this.label4.Location = new System.Drawing.Point(9, 149);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 9;
@@ -291,7 +284,7 @@
             "1 bit",
             "1.5 bits",
             "2 bits"});
-            this.stopbitsCB.Location = new System.Drawing.Point(87, 128);
+            this.stopbitsCB.Location = new System.Drawing.Point(81, 145);
             this.stopbitsCB.Name = "stopbitsCB";
             this.stopbitsCB.Size = new System.Drawing.Size(121, 20);
             this.stopbitsCB.TabIndex = 8;
@@ -299,7 +292,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 104);
+            this.label3.Location = new System.Drawing.Point(8, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 7;
@@ -314,7 +307,7 @@
             "6 bits",
             "7 bits",
             "8 bits"});
-            this.databitsCB.Location = new System.Drawing.Point(87, 101);
+            this.databitsCB.Location = new System.Drawing.Point(81, 115);
             this.databitsCB.Name = "databitsCB";
             this.databitsCB.Size = new System.Drawing.Size(121, 20);
             this.databitsCB.TabIndex = 6;
@@ -322,7 +315,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 78);
+            this.label2.Location = new System.Drawing.Point(7, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 12);
             this.label2.TabIndex = 5;
@@ -338,7 +331,7 @@
             "Even Check",
             "Check by 1",
             "Check by 0"});
-            this.comboBox2.Location = new System.Drawing.Point(87, 74);
+            this.comboBox2.Location = new System.Drawing.Point(81, 85);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 20);
             this.comboBox2.TabIndex = 4;
@@ -346,7 +339,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 51);
+            this.label1.Location = new System.Drawing.Point(7, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 12);
             this.label1.TabIndex = 3;
@@ -371,7 +364,7 @@
             "115200",
             "128000",
             "256000"});
-            this.buadRateCB.Location = new System.Drawing.Point(87, 47);
+            this.buadRateCB.Location = new System.Drawing.Point(81, 56);
             this.buadRateCB.Name = "buadRateCB";
             this.buadRateCB.Size = new System.Drawing.Size(121, 20);
             this.buadRateCB.TabIndex = 2;
@@ -380,7 +373,7 @@
             // portsListLabel
             // 
             this.portsListLabel.AutoSize = true;
-            this.portsListLabel.Location = new System.Drawing.Point(7, 23);
+            this.portsListLabel.Location = new System.Drawing.Point(7, 28);
             this.portsListLabel.Name = "portsListLabel";
             this.portsListLabel.Size = new System.Drawing.Size(29, 12);
             this.portsListLabel.TabIndex = 1;
@@ -390,7 +383,7 @@
             // portsListCB
             // 
             this.portsListCB.FormattingEnabled = true;
-            this.portsListCB.Location = new System.Drawing.Point(87, 20);
+            this.portsListCB.Location = new System.Drawing.Point(81, 26);
             this.portsListCB.Name = "portsListCB";
             this.portsListCB.Size = new System.Drawing.Size(121, 20);
             this.portsListCB.TabIndex = 0;
@@ -398,9 +391,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataRTB);
-            this.groupBox3.Location = new System.Drawing.Point(4, 4);
+            this.groupBox3.Location = new System.Drawing.Point(12, 345);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(229, 411);
+            this.groupBox3.Size = new System.Drawing.Size(460, 254);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data from Port";
@@ -410,7 +403,7 @@
             this.dataRTB.Location = new System.Drawing.Point(6, 20);
             this.dataRTB.Name = "dataRTB";
             this.dataRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.dataRTB.Size = new System.Drawing.Size(217, 385);
+            this.dataRTB.Size = new System.Drawing.Size(448, 224);
             this.dataRTB.TabIndex = 0;
             this.dataRTB.Text = "";
             // 
@@ -419,12 +412,134 @@
             this.openConfigFileDialog.FileName = "config.xml";
             this.openConfigFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.saveDBConfigBtn);
+            this.groupBox4.Controls.Add(this.TestConnBtn);
+            this.groupBox4.Controls.Add(this.dbNameTB);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.dbPwdTB);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.dbUsrNameTB);
+            this.groupBox4.Controls.Add(this.dbPortDB);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.dbServerAddressTB);
+            this.groupBox4.Location = new System.Drawing.Point(6, 98);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(224, 204);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Database Configuration";
+            // 
+            // saveDBConfigBtn
+            // 
+            this.saveDBConfigBtn.Location = new System.Drawing.Point(136, 172);
+            this.saveDBConfigBtn.Name = "saveDBConfigBtn";
+            this.saveDBConfigBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveDBConfigBtn.TabIndex = 13;
+            this.saveDBConfigBtn.Text = "Save";
+            this.saveDBConfigBtn.UseVisualStyleBackColor = true;
+            // 
+            // TestConnBtn
+            // 
+            this.TestConnBtn.Location = new System.Drawing.Point(16, 172);
+            this.TestConnBtn.Name = "TestConnBtn";
+            this.TestConnBtn.Size = new System.Drawing.Size(75, 23);
+            this.TestConnBtn.TabIndex = 12;
+            this.TestConnBtn.Text = "Test";
+            this.TestConnBtn.UseVisualStyleBackColor = true;
+            this.TestConnBtn.Click += new System.EventHandler(this.TestConnBtn_Click);
+            // 
+            // dbNameTB
+            // 
+            this.dbNameTB.Location = new System.Drawing.Point(93, 139);
+            this.dbNameTB.Name = "dbNameTB";
+            this.dbNameTB.Size = new System.Drawing.Size(121, 21);
+            this.dbNameTB.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 142);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 12);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "DB Name";
+            // 
+            // dbPwdTB
+            // 
+            this.dbPwdTB.Location = new System.Drawing.Point(93, 112);
+            this.dbPwdTB.Name = "dbPwdTB";
+            this.dbPwdTB.Size = new System.Drawing.Size(121, 21);
+            this.dbPwdTB.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 116);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Password";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 88);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Username";
+            // 
+            // dbUsrNameTB
+            // 
+            this.dbUsrNameTB.Location = new System.Drawing.Point(93, 85);
+            this.dbUsrNameTB.Name = "dbUsrNameTB";
+            this.dbUsrNameTB.Size = new System.Drawing.Size(121, 21);
+            this.dbUsrNameTB.TabIndex = 6;
+            // 
+            // dbPortDB
+            // 
+            this.dbPortDB.Location = new System.Drawing.Point(93, 58);
+            this.dbPortDB.Name = "dbPortDB";
+            this.dbPortDB.Size = new System.Drawing.Size(121, 21);
+            this.dbPortDB.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 61);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 12);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Port";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 34);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 12);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Address";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // dbServerAddressTB
+            // 
+            this.dbServerAddressTB.Location = new System.Drawing.Point(93, 31);
+            this.dbServerAddressTB.Name = "dbServerAddressTB";
+            this.dbServerAddressTB.Size = new System.Drawing.Size(121, 21);
+            this.dbServerAddressTB.TabIndex = 2;
+            // 
             // MainWindo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ClientSize = new System.Drawing.Size(484, 611);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.MainTitle);
             this.Name = "MainWindo";
@@ -444,6 +559,8 @@
             this.gruopBox2.ResumeLayout(false);
             this.gruopBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,13 +591,24 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button saveDataToFile;
         private System.Windows.Forms.CheckBox saveToFileCheck;
-        private System.Windows.Forms.Label dbConfigLabel;
-        private System.Windows.Forms.Button DBConfigBtn;
         private System.Windows.Forms.Label saveFilePath;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RichTextBox dataRTB;
         private System.Windows.Forms.Button saveConfigBtn;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button saveDBConfigBtn;
+        private System.Windows.Forms.Button TestConnBtn;
+        private System.Windows.Forms.TextBox dbNameTB;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox dbPwdTB;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox dbUsrNameTB;
+        private System.Windows.Forms.TextBox dbPortDB;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox dbServerAddressTB;
     }
 }
 
